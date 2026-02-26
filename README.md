@@ -31,7 +31,7 @@ The project is structured as a Rust workspace:
 kafkai/
 ├── broker/       # The message broker (server)
 ├── publisher/    # CLI tool to publish messages
-├── subscriber/   # CLI tool to consume messages
+├── consumer/   # CLI tool to consume messages
 └── common/       # Shared types and utilities
 ```
 
