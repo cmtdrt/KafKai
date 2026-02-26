@@ -1,6 +1,8 @@
-[package]
-name = "KafKai"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
+[workspace]
+members = [
+    "broker",
+    "publisher",
+    "consumer",
+    "common",
+]
+resolver = "2"
