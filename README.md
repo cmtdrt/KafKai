@@ -1,10 +1,6 @@
 # KafKai
 
-> A minimal, lightweight Kafka-like message broker.
-
-KafKai is a simplified distributed log built in 
-![Rust](https://img.shields.io/badge/Rust-%23f84c00.svg?logo=rust&logoColor=white) 
-to explore the core concepts behind event streaming systems.
+> A minimal, lightweight Kafka-like message broker written in ![Rust](https://img.shields.io/badge/Rust-%23f84c00.svg?logo=rust&logoColor=white) 
 
 ---
 
