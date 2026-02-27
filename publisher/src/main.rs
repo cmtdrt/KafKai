@@ -8,7 +8,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     if args.len() < 2 {
         eprintln!("Usage: publisher <topic> <message>");
-        std::process::exit(1);
+        quit_from_error();
     }
 
     let topic = args.remove(0);
@@ -32,7 +32,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     if response_line.trim().is_empty() {
         eprintln!("No response from broker");
-        std::process::exit(1);
+        quit_from_error();
     }
 
     let response: Response = serde_json::from_str(response_line.trim_end())?;
@@ -43,13 +43,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         Response::Error { message } => {
             eprintln!("Broker error: {}", message);
-            std::process::exit(1);
+            quit_from_error();
         }
         other => {
             eprintln!("Unexpected response from broker: {:?}", other);
-            std::process::exit(1);
+            quit_from_error();
         }
     }
     Ok(())
 }
 
+pub fn quit_from_error() {
+    println!("Exiting...");
+    std::process::exit(1);
+}
